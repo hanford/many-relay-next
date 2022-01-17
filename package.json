@@ -1,0 +1,32 @@
+{
+  "name": "relay-compiler-ci",
+  "version": "1.0.0",
+  "scripts": {
+    "relay": "relay-compiler"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "relay-compiler": "^13.0.1"
+  },
+  "relay": {
+    "src": "./",
+    "artifactDirectory": "./types",
+    "schema": "./apps/backend/schema/__generated__/main.graphql",
+    "exclude": [
+      "**/node_modules/**/*",
+      "**/apps/backend/**/*"
+    ],
+    "language": "typescript",
+    "noFutureProofEnums": true,
+    "customScalars": {
+      "NonEmptyString": "string",
+      "EntityId": "EntityId",
+      "UnixTimestamp": "Int",
+      "DateTime": "DateString",
+      "Date": "DateString",
+      "Time": "string"
+    }
+  }
+}
